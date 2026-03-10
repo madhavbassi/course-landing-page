@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Course</title>
+
+<style>
+body{
+font-family: Arial;
+background:#111;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.container{
+background:#222;
+padding:30px;
+border-radius:10px;
+max-width:400px;
+margin:auto;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px;
+border-radius:5px;
+border:none;
+}
+
+button{
+padding:10px 20px;
+background:#ff4b2b;
+border:none;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+
+button:hover{
+background:#ff2a00;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>AI Editing Course</h1>
+
+<div class="container">
+
+<h3>Login to access course</h3>
+
+<input id="email" placeholder="Enter Email">
+<input id="password" type="password" placeholder="Enter Password">
+
+<br>
+
+<button onclick="checkLogin()">Access Course</button>
+
+<p id="msg"></p>
+
+</div>
+
+<script>
+
+function checkLogin(){
+
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+
+var allowedUsers = [
+{email:"student1@gmail.com",password:"1234"},
+{email:"student2@gmail.com",password:"abcd"}
+];
+
+var access=false;
+
+for(var i=0;i<allowedUsers.length;i++){
+
+if(email==allowedUsers[i].email && password==allowedUsers[i].password){
+
+access=true;
+
+}
+
+}
+
+if(access){
+
+window.location.href="course.html";
+
+}else{
+
+document.getElementById("msg").innerHTML="Access Denied";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
